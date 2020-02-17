@@ -1,6 +1,6 @@
 {
     "name": "@meliuz/lib-react-gpt",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "description": "A react display ad component using Google Publisher Tag",
     "main": "lib/index.js",
     "jsnext:main": "es/index.js",
@@ -12,7 +12,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nfl/react-gpt"
+        "url": "https://github.com/meliuz/lib-react-gpt.git"
     },
     "keywords": [
         "react-gpt",
@@ -22,9 +22,6 @@
         "gpt",
         "google publisher tags"
     ],
-    "bugs": {
-        "url": "https://github.com/nfl/react-gpt/issues"
-    },
     "files": [
         "*.md",
         "docs",
@@ -112,7 +109,7 @@
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "build:compile": "npm run clean && npm run compile",
         "build:es": "BABEL_ENV=es babel --copy-files ./src -d es",
-        "build:umd": "NODE_ENV=development webpack src/index.js dist/react-gpt.js",
+        "build:umd": "NODE_ENV=development webpack src/index.js ./dist/react-gpt.min.js",
         "build": "npm i -D webpack && webpack -p src/index.js --output dist/react-gpt.min.js --mode production",
         "bundlesize": "npm run build:umd:min && bundlesize",
         "clean": "rimraf lib coverage dist lib es",
@@ -121,7 +118,8 @@
         "lint": "eslint --fix src test examples",
         "start": "npm run build && env BABEL_ENV=examples node examples/server/index.js",
         "pretest": "npm run build",
-        "prepare": "npm run build && npm run build:es && npm run build:umd && npm run build:umd:min",
+        "prepare:old": "npm run build && npm run build:es && npm run build:umd && cp ./package.json ./dist/",
+        "prepare": "npm run build && cp ./package.json ./dist/",
         "test": "npm run lint && karma start",
         "update-apilist": "node ./scripts/updateAPIList.js"
     },

@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run:
           name: Build
-          command: npm run build
+          command: npm run prepare
   publish-npm-package:
     docker:
       - image: meliuz/node:10.15.1
@@ -34,7 +34,7 @@ jobs:
       - checkout
       - run:
           name: Publish npm package
-          command: npm publish
+          command: npm publish dist
 
 workflows:
   version: 2
