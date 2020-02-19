@@ -34,7 +34,7 @@ jobs:
       - checkout
       - run:
           name: Publish npm package
-          command: npm i && npm publish
+          command: npm i && npm build && npm publish
 
 workflows:
   version: 2
