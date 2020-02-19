@@ -1,7 +1,7 @@
 es/
 node_modules/
-lib/
 dist/
+lib
 coverage/
 npm-debug.log
 yarn-error.log
