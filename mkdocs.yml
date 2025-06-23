@@ -1,0 +1,6 @@
+---
+site_name: lib-react-gpt
+nav:
+  - Home: README.md
+plugins:
+  - techdocs-core
