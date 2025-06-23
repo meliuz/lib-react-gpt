@@ -1,0 +1,22 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: meliuz/lib-react-gpt
+  description: '## Table of Contents
+
+
+    * [Getting Started](/docs/GettingStarted.md)
+
+    * [API](/docs/api)
+
+    * [Guides](/docs/Guides.md)
+
+
+    **In this documentation, `GPT` refe...'
+  name: lib-react-gpt
+spec:
+  lifecycle: production
+  type: library
