@@ -65,3 +65,16 @@ workflows:
               ignore: /.*?/
             tags:
               only: /^[0-9]+(\.[0-9]+){2}$/
+
+  build-docs:
+    jobs:
+      - infra/build-techdocs:
+          name: build-techdocs
+          context: global
+          filters:
+            branches:
+              only:
+                - main
+                - master
+orbs:
+  infra: meliuz/infra-orb@1.23
